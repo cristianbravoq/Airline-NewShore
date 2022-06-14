@@ -1,0 +1,72 @@
+// Se eliminan estilos predeterminados
+a, p, ul
+    text-decoration: none
+    color: #FFFFFF
+    margin: 0
+    padding: 0
+    list-style: none
+
+// Se adapta la fuente para que se reduzca a medida que disminuye el viewport width
+h3, li
+    font-size: clamp(.95rem, 0.2rem + 2vw, 18px)
+
+// Asigno un tipo de fuente y ajusto el espacio entre cajas bloque
+.footer
+    font-family: Roboto-Regular
+    height: auto
+    padding: 10px 0px 89px 30px
+    flex-direction: row
+    background: #0A2463
+    .footer__social // Ajuste de iconos de redes sociales
+        justify-content: center
+        padding-top: 33px
+        text-align: center
+        p
+            font-size: 20px
+        .footer__icons
+            padding-top: 20px
+            padding-bottom: 36px
+            width: 130px
+            margin:0px auto
+            display: flex
+            justify-content: space-around // Separo los iconos de forma que se ajusten al espacio
+        img
+            width: 20px
+            height: 30px
+    .footer__info
+        display: flex
+        flex-wrap: wrap // Ajusto los bloques de informacion para que se ajusten a medida que se reduce el viewport width esto me ayuda a ahorrarme codigo responsive
+        gap: 20px // Se da un espacio de 20 pixeles entre las cajas de informacion
+        top: 140px
+        width: 100%
+        justify-content: space-evenly
+        h3
+            color: #FB3640
+        li
+            margin-bottom: 12px
+
+.footer__info div
+    min-width: 260px
+
+.footer__info--col
+    align-self: center
+    width: 175px
+    h3
+        margin-top: 0
+    p
+        font-size: clamp(.9rem, 0.2rem + 2vw, 14px)
+
+.footer__icons--background
+    background: #fff
+    align-content: center
+    border-radius: 50%
+    width: 30px
+    height: 30px
+    box-shadow: -0px -.2px 5px 4px #7c8ca4c7
+
+.footer__icons--background:hover
+    box-shadow: -0px -.2px 5px 4px #FB3640
+
+@media screen and (max-width: 525px) // Ajuste de espacio de la caja contenedora cuando el viewport width es inferior a 525px
+    .footer
+        padding: 5px 0px 40px 5px

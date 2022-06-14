@@ -1,0 +1,106 @@
+h2
+    margin-top: 65px
+    margin-left: 63px
+    color: #247BA0
+    font-family: Roboto-Bold
+    &::after // Linea que acompaña el titulo "OFFERS"
+        content: ''
+        width: 65%
+        position: absolute
+        height: 1px
+        margin-left: 20px
+        justify-content: center
+        margin-top: 1rem
+        background-color: #605F5E
+
+// Adaptacion de la linea que acompaña el titulo "OFFERS" responsive
+@media screen and (min-width: 900px) // Mejorar como se adapta la linea al ancho de la pantalla
+    h2::after
+        width: 80%
+
+@media screen and (max-width: 450px)
+    h2::after
+        width: 30%
+
+.offers // Dar un formato de dos columnas mediante GRID
+    margin: 0 63px
+    display: grid
+    grid-template-columns: 2fr auto
+
+.offers__travel // Adaptacion responsive de las cards
+    display: grid
+    gap: 2rem
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) )
+
+.offers__card
+    width: 233px
+    height: 206.8px
+    color: #FFFFFF
+    overflow: hidden
+    border-radius: 18px
+    box-shadow: -0px -.2px 5px 8px #aea2a268
+
+@media screen and (max-width: 750px) // Adaptacion responsive de las cards reduciendo el numero de columnas del GRID principal
+    .offers
+        grid-template-columns: auto
+        justify-content: center
+    .offers__card
+        width: 233px
+        margin: 0 10px
+    .offers__menu
+        margin: auto
+
+@media screen and (max-width: 891px) // Ajuste responsivo del margin a la caja donde muestra el viaje seleccionado
+    .offers__destination
+        margin-left: 0% !important
+
+@supports(object-fit: cover) //Adaptar la imagen de fondo de las cards al tamaño de su caja contenedora
+    .offers__card--image img
+      height: 100%
+      width: 100%
+      object-fit: cover
+      object-position: center center
+
+.offers__card--image
+    width: 100%
+    height: 100%
+
+.offers__destination
+    width: 233px
+    text-align: center
+    margin-left: 34.5%
+    margin-top: 77px
+    margin-bottom: 90px
+    font-family: Roboto-Bold
+
+.offers__card--details
+    border: 0
+    transform: translate(0px, -35%)  // Ocultar una parte de las cards
+    background: #000000AD
+    color: #FFFFFF
+    width: 233px
+    height: 206.8px
+    transition: transform .7s
+    .offers__card--price
+        margin: 13px 17px
+        text-align: right
+        font-weight: bold
+        font-family: Roboto-Bold
+        font-size: 20px
+    .offers__card--info
+        margin: 9px 17px
+        top: 0
+        font-weight: 200
+        text-align: left
+        font-family: Roboto-Ligth
+        font-size: 16px
+
+.offers__card--details:hover
+    transform: translate(0px, -100%) // Visualizar la card donde se pasa el puntero por completo
+    .offers__card--price
+        position: absolute
+        right: 0px
+        bottom: 0
+
+.offers__menu
+    margin-bottom: 65px

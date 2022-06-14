@@ -1,0 +1,42 @@
+<header class="header">
+
+    <div class="header__title">
+        <a class="textdecoration--1 textdecoration--2" href="#">AIRLINE</a>
+    </div>
+
+    <nav class="nav">
+
+        <div class="nav__lenguage">
+            <ng-container *ngIf="this.lenguageValue.value != ''; else travelTemplate">
+                <span>{{lenguageValue}}</span>
+            </ng-container>
+            <ng-template #travelTemplate>
+                <span>EN</span>
+            </ng-template>
+            <img class="nav__arrow--down" src="./../../../../assets/resources/arrow-down.svg" alt="" srcset="">
+            <div>
+                <select class="nav__lenguage--menu" name="lenguage" id="lenguage" size="4" [(ngModel)]="lenguageValue">
+                    <option *ngFor="let v of lenguages" [value]="v.abbreviation">
+                        {{v.abbreviation}} - {{v.language}}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div id="menuToggle">
+            <input class="inputcheck" type="checkbox" />
+                <div class="menuToggle--icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            <ul id="menuNav">
+                <li><a class="textdecoration--1" href="">Home</a></li>
+                <li><a class="textdecoration--1" href="">About</a></li>
+                <li><a class="textdecoration--1" href="">Destination</a></li>
+                <li><a class="textdecoration--1" href="">Contact</a></li>
+            </ul>
+        </div>
+
+    </nav>
+</header>

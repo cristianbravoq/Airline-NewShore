@@ -1,0 +1,36 @@
+<div>
+
+    <h2>Offers</h2>
+
+    <div class="offers">
+        <div class="offers__cards">
+            <div class="offers__travel">
+                <div class="offers__card" *ngFor="let v of destination">
+                    <div class="offers__card--image">
+                        <img src={{v.img}}/>
+                    </div>
+                    <button class="offers__card--details" (click)="trip(v.trip)">
+                        <div style="height: 100%;">
+                            <p class="offers__card--info">Trip to {{v.trip}}</p>
+                            <p class="offers__card--price">Price ${{v.price}}</p>
+                            <p class="offers__card--info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in nulla mauris more.</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="offers__destination">
+                <ng-container *ngIf="this.travel != ''">
+                    <span>Trip to {{travel}}</span>
+                </ng-container>
+                <span><hr>Chosen destination</span>
+            </div>
+        </div>
+
+        <div class="offers__menu">
+            <app-trip-menu></app-trip-menu>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,58 @@
+h1, p
+    margin: 0
+    padding: 0
+
+.presentation  // Asignar fondo y adaptarlo
+    background-image: url("/assets/resources/plane.jpg")
+    background-repeat: no-repeat 
+    background-size: cover
+    height: 475px
+    display: grid
+    .presentation__title
+        font-family: Roboto-Regular
+        position: absolute
+        top: 161px
+        margin-left: 63px
+        color: #FFFFFF
+        h1
+            heigth: 37px
+            font-size: clamp(0.7rem, 0.1rem + 5vw, 30px)
+            margin-bottom: 5px
+        p
+            font-size: clamp(.8rem, 0.2rem + 2vw, 16px)
+
+.presentation__button
+    font-family: Roboto-Bold
+    cursor: pointer
+    position: absolute
+    top: 296px
+    left: 63px
+    font-size: 20px
+    width: 233px
+    height: 50px
+    border-radius: 30px
+    border: transparent
+    background: #FB3640
+    color: #FFFFFF
+    box-shadow: -0px -.2px 3px 7px #97474768
+    transition: box-shadow .2s
+
+.presentation__button:active // Decoracion del boton cuando este se presione
+    box-shadow: -0px -.2px 5px 0px #6a6a5782, inset -0px -0px 8px 8px #a36d6d68, inset -0px -0px 2px 4px rgba(255,255,255,0.55)
+
+.presentation__button:hover
+    text-shadow: 0 0 10px #FFF, 23px 3px 9px #cebece73
+
+@media screen and (max-width: 900px) //Generar un aspecto con bordes redondeados y centrar textos
+    .presentation
+        margin: 15px
+        border-radius: 15px
+    .presentation__title
+        position: static !important
+        justify-content: center
+        text-align: center
+        margin-left: 0 !important
+    .presentation__button--contenedor
+        justify-self: center
+    .presentation__button
+        position: static
