@@ -1,17 +1,14 @@
+.offers__title
+    display: grid
+    grid-template-columns: 70px 1fr
+    margin: 65px 63px 0px 63px
+    span
+        margin-bottom: 30px
+        border-bottom: 2px solid #605F5E
+
 h2
-    margin-top: 65px
-    margin-left: 63px
     color: #247BA0
     font-family: Roboto-Bold
-    &::after // Linea que acompaña el titulo "OFFERS"
-        content: ''
-        width: 65%
-        position: absolute
-        height: 1px
-        margin-left: 20px
-        justify-content: center
-        margin-top: 1rem
-        background-color: #605F5E
 
 // Adaptacion de la linea que acompaña el titulo "OFFERS" responsive
 @media screen and (min-width: 900px) // Mejorar como se adapta la linea al ancho de la pantalla
@@ -104,3 +101,4 @@ h2
 
 .offers__menu
     margin-bottom: 65px
+
